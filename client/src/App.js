@@ -36,11 +36,15 @@ class App extends React.Component {
 		});
 	}
 
+	onClick(){
+		console.log("Clicked")
+	}
+
 	render() {
 		// console.log(figures[0].meta)
 		return (
 			<div>
-				<Header />
+				<Header onClick={() => this.onClick()}/>
 				<div className="ui cards">
 					{figures.map(figure => (
 						<Card
