@@ -36,15 +36,16 @@ class App extends React.Component {
 		});
 	}
 
-	onClick(){
-		console.log("Clicked")
+	handleClick(e){
+		let val = e.target.dataset.name
+		console.log(val)
 	}
 
 	render() {
 		// console.log(figures[0].meta)
 		return (
 			<div>
-				<Header onClick={() => this.onClick()}/>
+				<Header onClick={(e) => this.handleClick(e)}/>
 				<div className="ui cards">
 					{figures.map(figure => (
 						<Card
