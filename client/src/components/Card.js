@@ -16,7 +16,12 @@ const Card = props => {
 					</div> */}
 				<div className="ui checkbox">
 					<input type="checkbox" name="owned" checked={props.checked} onChange={props.onChange}/>
-					<label>Own</label>
+					<label>Figure</label>
+				</div>
+				<br />
+				<div className="ui checkbox">
+					<input type="checkbox" name="owned" checked={props.checked} onChange={props.onChange}/>
+					<label>Assessory</label>
 				</div>
 			</div>
 		</div>
