@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = props => {
 	return (
-		<div className="card">
+		<div className="card" key={props._id}>
 			<div className="content">
 				<img className="right floated mini ui image" src={props.link} alt={props.alt} />
 				<div className="header">{props.header}</div>

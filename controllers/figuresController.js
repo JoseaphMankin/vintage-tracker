@@ -3,7 +3,7 @@ const db = require('../models');
 // Defining methods for the figuresController
 module.exports = {
 	findAll: function(req, res) {
-		console.log('FIND ALL WORKING??!');
+		// console.log('FIND ALL WORKING??!');
 		db.Figure.find(req.query)
 			.sort()
 			.then(dbModel => res.json(dbModel))
@@ -29,5 +29,5 @@ module.exports = {
 			.then(dbModel => dbModel.remove())
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
-	},
+	}
 };

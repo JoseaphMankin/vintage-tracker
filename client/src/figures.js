@@ -1,3 +1,4 @@
+// This served as the stand in database before Mongo. No longer used.
 const figures = [
 	{
 		header: 'Artoo Detoo (R2-D2)',
@@ -5,7 +6,7 @@ const figures = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-ArtooDetoo/TN/05.jpg',
         alt: 'r2d2',
-        checked: false,
+        checked: true,
         id: 1
     },
     {

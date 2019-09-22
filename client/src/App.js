@@ -1,11 +1,14 @@
 import React from 'react';
 import Card from './components/Card';
 import Header from './components/Header/Header';
-import figures from './figures.js';
+// import figures from './figures.js';
 import API from './utils/API';
 
 class App extends React.Component {
-	state = { figureList: figures };
+	state = { 
+				figureList: [], 
+				filter: "all" 
+			};
 
 	componentDidMount() {
 		this.loadFigures();
@@ -15,7 +18,7 @@ class App extends React.Component {
 		API.getFigures()
 			.then(res => {
 				this.setState({ figureList: res.data });
-				console.log(res);
+				console.log(this.state.figureList);
 			})
 			.catch(err => console.log(err));
 	};
@@ -25,7 +28,7 @@ class App extends React.Component {
 		this.setState(prevState => {
 			const updatedFigures = prevState.figureList.map(figure => {
 				console.log(id);
-				if (figure.id === id) {
+				if (figure._id === id) {
 					figure.checked = !figure.checked;
 				}
 				return figure;
@@ -47,16 +50,16 @@ class App extends React.Component {
 			<div>
 				<Header onClick={(e) => this.handleClick(e)}/>
 				<div className="ui cards">
-					{figures.map(figure => (
+					{this.state.figureList.map(figure => (
 						<Card
-							key={figure.id}
+							key={figure._id}
 							header={figure.header}
 							meta={figure.meta}
 							description={figure.description}
 							link={figure.link}
 							alt={figure.alt}
 							checked={figure.checked}
-							onChange={() => this.onChange(figure.id)}
+							onChange={() => this.onChange(figure._id)}
 						/>
 					))}
 				</div>
