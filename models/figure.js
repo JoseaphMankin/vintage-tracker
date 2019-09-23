@@ -7,7 +7,8 @@ const figureSchema = new Schema({
 	description: { type: String, required: false },
 	link: { type: String, required: false },
 	alt: { type: String, required: false },
-	checked: { type: Boolean, default: false },
+	ownChecked: { type: Boolean, default: false },
+	acceChecked: { type: Boolean, default: false } 
 });
 
 const Figure = mongoose.model('Figure', figureSchema);

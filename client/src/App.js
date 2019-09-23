@@ -24,12 +24,14 @@ class App extends React.Component {
 	};
 
 	onChange(id) {
-		console.log('clicked');
 		this.setState(prevState => {
 			const updatedFigures = prevState.figureList.map(figure => {
-				console.log(id);
-				if (figure._id === id) {
-					figure.checked = !figure.checked;
+				if (figure._id === id && figure.ownChecked === false) {
+					figure.ownChecked = true;
+					API.updateFigure(id, figure.ownChecked)
+				} else{
+					figure.ownChecked = false;
+					API.updateFigure(id, figure.ownChecked)
 				}
 				return figure;
 			});
@@ -37,6 +39,7 @@ class App extends React.Component {
 				figureList: updatedFigures,
 			};
 		});
+		console.log(this.state)
 	}
 
 	handleClick(e){
@@ -58,7 +61,8 @@ class App extends React.Component {
 							description={figure.description}
 							link={figure.link}
 							alt={figure.alt}
-							checked={figure.checked}
+							ownChecked={figure.ownChecked}
+							acceChecked={figure.acceChecked}
 							onChange={() => this.onChange(figure._id)}
 						/>
 					))}

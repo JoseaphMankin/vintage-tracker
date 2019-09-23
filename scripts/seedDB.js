@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-// This file empties the DB collections and inserts faux starting data
+// This file empties the DB collections and inserts faux starting data. 
+// Run Node seedDB.js in terminal to reseed. (May need to drop DB first)
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/vintageTrackerDB', { useNewUrlParser: true });
 
@@ -12,7 +13,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-ArtooDetoo/TN/05.jpg',
 		alt: 'r2d2',
-		checked: false,
+		ownChecked: false,
+		acceChecked: false
 	},
 	{
 		header: 'Chewbacca',
@@ -20,7 +22,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-Chewbacca/TN/05.jpg',
 		alt: 'chewbacca',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Luke Skywalker',
@@ -28,7 +31,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-Luke/TN/05.jpg',
 		alt: 'luke',
-		checked: false,
+		ownChecked: false,
+		acceChecked: false
 	},
 	{
 		header: 'Princess Leia Organa',
@@ -36,7 +40,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-Leia/TN/09.jpg',
 		alt: 'leia',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Ben (Obi-Wan) Kenobi',
@@ -44,7 +49,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-BenKenobi/TN/09.jpg',
 		alt: 'obiwan',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Darth Vader',
@@ -52,7 +58,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-DarthVader/TN/21.jpg',
 		alt: 'darthVader',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Han Solo',
@@ -60,7 +67,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-HanSolo/TN/17.jpg',
 		alt: 'hansolo',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'See-Threepio (C-3PO)',
@@ -68,7 +76,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-C3PO/TN/05.jpg',
 		alt: 'c3p0',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Stormtrooper',
@@ -76,7 +85,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-Stormtrooper/TN/05.jpg',
 		alt: 'stormtrooper',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Death Squad Commander',
@@ -84,7 +94,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-DeathSquad/TN/05.jpg',
 		alt: 'dsc',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Jawa',
@@ -92,7 +103,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-Jawa/TN/01.jpg',
 		alt: 'jawa',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 	{
 		header: 'Sand People',
@@ -100,7 +112,8 @@ const figureSeed = [
 		description: 'Star Wars 1977',
 		link: 'http://www.rebelscum.com/Kenner/F-SandPeople/TN/05.jpg',
 		alt: 'SandPeople',
-		checked: true,
+		ownChecked: true,
+		acceChecked: false
 	},
 ];
 
